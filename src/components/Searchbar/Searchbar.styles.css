@@ -1,0 +1,38 @@
+.Searchbar {
+    height: 40px;
+    position: relative;
+    background-color: var(--semi-transparent-bg);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.Searchbar span {
+    position: absolute; 
+    left: 10px;
+    color: var(--light-white);
+}
+
+.Searchbar input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--white);
+    padding: 15px 15px 0 40px;
+    transition: background-color .3s ease;
+}
+
+.Searchbar .placeholder {
+    color: var(--light-white);
+    font-size: var(--small);
+    position: absolute;
+    left: 40px;
+    transition: all .3s ease;
+}
+
+.Searchbar input:focus  {
+    background-color: var(--brighten-transparent-bg);
+}
+
+.Searchbar input:focus + .placeholder  {
+    transform: translateY(-10px);
+}
