@@ -29,6 +29,7 @@
     padding: 15px;
     width: 100%;
     border-bottom: 2px solid var(--solid-bg);
+    /* position: fixed; */
 }
 
 .Sidebar .sidebar-top .search-container {
@@ -39,6 +40,16 @@
     background-color: unset;
     color: var(--white);
     font-size: var(--small);
+}
+
+.Sidebar .sidebar-dropdowns {
+    /* margin-top: 72px; */
+    max-height: calc(100dvh - 72px);
+    overflow-y: scroll;
+}
+
+.Sidebar .sidebar-dropdowns::-webkit-scrollbar {
+    display: none;
 }
 
 .Sidebar .sidebar-dropdown .label {
@@ -52,14 +63,24 @@
     overflow: hidden;
 }
 
+.Sidebar .dropdown-content .trending-games, .Sidebar .dropdown-content .all-games {
+    padding-inline: 40px;
+    padding-top: 10px;
+}
+
 .Sidebar .sidebar-dropdown .dropdown-content .dropdown-item {
     height: 34px;
     font-size: var(--small);
-    padding-inline: 40px;
+}
+
+.Sidebar .sidebar-dropdown .dropdown-content .dropdown-item img  {
+    width: 24px;
+    height: 18px;
+    object-fit: contain;
 }
 
 .Sidebar .sidebar-dropdown .dropdown-content {
-    animation: expand .4s ease forwards;
+    animation: expand .6s ease forwards;
 }
 
 .Sidebar .sidebar-dropdown.inactive .dropdown-content {
@@ -75,7 +96,6 @@
     transform: rotate(180deg);
     animation: rotate .3s ease forwards;
 }
-
 
 @keyframes rotateFull {
     100% {

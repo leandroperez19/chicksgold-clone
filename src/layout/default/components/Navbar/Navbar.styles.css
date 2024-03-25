@@ -1,0 +1,222 @@
+nav {
+    height: 72px;
+    padding-inline: 15px;
+    border-bottom: 1px solid var(--semi-transparent-bg);
+    position: fixed;
+    width: 100%;
+    background-color: var(--nav-bg);
+}
+
+nav span {
+    color: var(--light-white);
+}
+
+nav img {
+    height: 24px;
+    margin-top: -12px;
+}
+
+nav .right button {
+    height: 40px;
+    color: var(--text-secondary);
+    padding-inline: 12px;
+    border-radius: 5px;
+    background-color: var(--green);
+    box-shadow: 1px 2px 6px #0004;
+    cursor: pointer;
+}
+
+nav .right button span {
+    color: var(--text-secondary);
+}
+
+@media (1024px <= width) {
+    nav .logo {
+        padding-right: 20px;
+        height: 48px;
+        border-right: 1px solid var(--light-white);
+    }
+
+    nav .nav-content {
+        position: relative;
+    }
+
+    nav img {
+        height: 32px;
+        margin: 0;
+    }
+
+    nav .left .categories {
+        margin-left: 45px;
+    }
+    
+    nav .left .categories .category-nav .hover-item {
+        padding-inline: 15px;
+        transition: all .3s ease;
+        cursor: pointer;
+        position: relative;
+    }
+
+    nav .left .categories .category-nav .hover-item .arrow-down { 
+        transition: transform .3s ease;
+    }
+
+    nav .left .categories .category-nav .hover-item::before { 
+        content: '';
+        width: 1px;
+        height: 0;
+        background-color: var(--green);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: height .3s ease;
+    }
+
+    nav .left .categories .category-nav .hover-item:hover {
+        background-color: var(--text-secondary);
+        color: var(--green);
+    }
+
+    nav .left .categories .category-nav .hover-item:hover .arrow-down {
+        color: var(--green);
+        transform: rotate(180deg);
+    }
+    
+    nav .left .categories .category-nav .hover-item:hover::before {
+        height: 100%;
+    }
+
+    nav .right .cart {
+        cursor: pointer;
+    }
+
+    nav .right .cart span {
+        transition: color .3s ease;
+    }
+
+    nav .right .cart:hover span {
+        color: var(--green);
+    }
+
+    nav .left .categories .category-nav .nav-expandable {
+        position: absolute;
+        width: calc(100% + 30px);
+        display: none;
+        left: -15px;
+        background-color: var(--expandable-bg);
+        min-height: 373px;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games {
+        flex-basis: 20%;
+        background-color: var(--semi-transparent-bg);
+        padding-block: 15px;
+        max-width: 220px;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games h5 {
+        margin: 15px;
+        position: relative;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games h5::after {
+        display: block;
+        width: 58px;
+        background-color: var(--green);
+        height: 1px;
+        content: '';
+        margin-top: 10px;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games .game {
+        padding: 15px;
+        transition: background-color .3s ease;
+        cursor: pointer;
+        position: relative;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games .game::before {
+        height: 0;
+        width: 1px;
+        left: 0;
+        bottom: 0;
+        background-color: var(--green);
+        transition: height .3s ease;
+        content: '';
+        position: absolute;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games .game img {
+        width: 24px;
+        height: 18px;
+        object-fit: contain;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games .game:hover {
+        background-color: var(--expandable-bg);
+    }
+
+    nav .left .categories .category-nav .nav-expandable .trending-games .game:hover::before {
+        height: 100%;
+    }
+
+    nav .left .categories .category-nav .hover-item:hover + .nav-expandable {
+        display: flex;
+    }
+
+    nav .left .categories .category-nav .nav-expandable:hover  {
+        display: flex;
+    }
+
+    nav .left .categories .category-nav .nav-expandable:hover .category-nav .hover-item{
+        background-color: var(--text-secondary) !important;
+        color: var(--green) !important;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .all-games {
+        padding: 20px 15px 15px;
+        flex-basis: 80%;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .all-games .search-container {
+        max-width: 1080px;
+    }
+    
+    nav .left .categories .category-nav .nav-expandable .all-games .games {
+        margin-top: 13px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    nav .left .categories .category-nav .nav-expandable .all-games .games .game {
+        padding: 15px 5px;
+        position: relative;
+        transition: background-color .3s ease;
+        cursor: pointer;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .all-games .games .game::before {
+        height: 0;
+        width: 1px;
+        left: 0;
+        bottom: 0;
+        background-color: var(--green);
+        transition: height .3s ease;
+        content: '';
+        position: absolute;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .all-games .games .game:hover {
+        background-color: var(--semi-transparent-bg);
+    }
+
+    nav .left .categories .category-nav .nav-expandable .all-games .games .game:hover::before {
+        height: 100%;
+    }
+
+    nav .left .categories .category-nav .nav-expandable .all-games .games .game img {
+        width: 24px;
+        height: 18px;
+        object-fit: contain;
+    }
+}
+

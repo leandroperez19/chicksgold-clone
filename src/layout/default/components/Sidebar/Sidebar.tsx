@@ -1,28 +1,16 @@
 import { FC, useEffect, useState } from "react";
 import "./Sidebar.styles.css";
 import Searchbar from "../../../../components/Searchbar/Searchbar";
+import { Category, Game } from "../../../../types/category.types";
 
 type SidebarProps = {
     setState: () => void,
     reference:  React.MutableRefObject<HTMLDivElement | null>,
-    categories: any[]
+    categories: Category[] | null
 };
 
 const Sidebar: FC<SidebarProps> = ({ setState, reference, categories }) => {
-    const [array, setArray] = useState<string[]>([""]);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-    const generateArray = () => {
-        let arr = [];
-        for (let i = 0; i < 10; i++) {
-            arr.push("hola");
-        }
-        setArray(arr);
-    };
-
-    useEffect(() => {
-        generateArray();
-    }, []);
 
     const handleDropdownToggle = (label: string) => {
         if (label === activeDropdown) {
@@ -45,22 +33,10 @@ const Sidebar: FC<SidebarProps> = ({ setState, reference, categories }) => {
             </div>
             <div className="sidebar-dropdowns">
                 {
-                    categories.map((cat: any) => (
-                        <SidebarDropdown label={cat.name} options={array} isActive={cat.name === activeDropdown} onToggle={() => handleDropdownToggle(cat.name)}/>
+                    categories?.map((cat: Category) => (
+                        <SidebarDropdown label={cat.name} options={cat.games} isActive={cat.name === activeDropdown} onToggle={() => handleDropdownToggle(cat.name)} key={cat.id}/>
                     ))
                 }
-                {/* <SidebarDropdown
-                    label={"Currency"}
-                    options={array}
-                    isActive={"Currency" === activeDropdown}
-                    onToggle={() => handleDropdownToggle("Currency")}
-                />
-                <SidebarDropdown
-                    label={"Items"}
-                    options={array}
-                    isActive={"Items" === activeDropdown}
-                    onToggle={() => handleDropdownToggle("Items")}
-                /> */}
             </div>
         </div>
     );
@@ -68,7 +44,7 @@ const Sidebar: FC<SidebarProps> = ({ setState, reference, categories }) => {
 
 type SidebarDropdownProps = {
     label: string;
-    options: string[];
+    options: Game[];
     isActive: boolean;
     onToggle: () => void;
 };
@@ -100,17 +76,26 @@ const SidebarDropdown: FC<SidebarDropdownProps> = ({
             </div>
             {active && (
                 <div className="dropdown-content">
-                    {options.map((opt, i) => (
-                        <div
-                            className="dropdown-item d-flex gap-10 align-center"
-                            key={i}
-                        >
-                            <span className="material-symbols-outlined">
-                                play_circle
-                            </span>
-                            <div>{opt}</div>
-                        </div>
-                    ))}
+                    <div className="trending-games">
+                        <h5 className="fw-300 fs-regular">Trending Games</h5>
+                        {options.map((opt, i) => (
+                            opt.isTrending &&
+                            <div className="dropdown-item d-flex gap-10 align-center" key={i}>
+                                <img src={opt.icon.url} alt="icon" />
+                                <div>{opt.name}</div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="all-games">
+                    <h5 className="fw-300 fs-regular">All Games</h5>
+                        {options.map((opt, i) => (
+                            !opt.isTrending &&
+                            <div className="dropdown-item d-flex gap-10 align-center" key={i}>
+                                <img src={opt.icon.url} alt="icon" />
+                                <div>{opt.name}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )}
         </div>

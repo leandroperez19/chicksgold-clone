@@ -18,11 +18,14 @@ a:visited {
     --text-primary: #000000de;
     --text-secondary: #37384b;
     --dark-bg: #262833;
+    --nav-bg: #303141;
     --very-transparent-bg: #4c608533;
     --semi-transparent-bg: #4c608566;
     --brighten-transparent-bg: #4c608599;
     --solid-bg: #4c6085;
     --sidebar-bg: #2d3344;
+    --expandable-bg: #2b2c3c;
+    --tiny: 10px;
     --small: 12px;
     --regular: 14px;
     --medium: 16px;

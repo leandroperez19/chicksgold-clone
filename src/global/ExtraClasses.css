@@ -44,6 +44,10 @@
     width: 100%;
 }
 
+.h-100 {
+    height: 100%;
+}
+
 .full-size {
     width: 100%;
     height: 100%;
@@ -67,4 +71,28 @@
 
 .gap-10 {
     gap: 10px;
+}
+
+.white {
+    color: var(--white);
+}
+
+.fs-s {
+    font-size: var(--small);
+}
+
+.fs-regular {
+    font-size: var(--regular);
+}
+
+.fs-m {
+    font-size: var(--medium);
+}
+
+.fs-l {
+    font-size: var(--large);
+}
+
+.fw-300 {
+    font-weight: 300;
 }

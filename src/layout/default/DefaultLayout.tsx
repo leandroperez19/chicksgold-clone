@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { useScreen } from "../../hooks/useScreen";
 import { getCategories } from "../../services/categoryService";
+import { Category } from "../../types/category.types";
 
 type DefaultLayaoutProps = {
     children: ReactNode;
@@ -10,11 +11,11 @@ type DefaultLayaoutProps = {
 
 const DefaultLayaout: FC<DefaultLayaoutProps> = ({ children }) => {
     const [sidebarState, setSidebarState] = useState<boolean>(false);
-    const [categories, setCategories] = useState<any>();
+    const [categories, setCategories] = useState<Category[] | null>(null);
     const ref = useRef<HTMLDivElement | null>(null);
-    const { isMobile } = useScreen(1200);
+    const { isMobile } = useScreen(1024);
     const getAllCategories = () => {
-        getCategories().then((res: any) => {
+        getCategories().then((res) => {
             setCategories(res?.categories);
         });
     };
@@ -38,7 +39,7 @@ const DefaultLayaout: FC<DefaultLayaoutProps> = ({ children }) => {
 
     return (
         <div>
-            <Navbar sidebarToggle={sidebarToggle} />
+            <Navbar sidebarToggle={sidebarToggle} categories={categories}/>
             {sidebarState && isMobile && (
                 <Sidebar setState={sidebarToggle} reference={ref} categories={categories}/>
             )}
