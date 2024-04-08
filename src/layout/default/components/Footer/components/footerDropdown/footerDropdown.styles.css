@@ -30,29 +30,29 @@
 }
 
 .footer-dropdown.active .footer-expandable {
-    animation: expand .8s ease forwards;
+    animation: expandFooter .8s ease forwards;
     border-bottom: 1px solid var(--solid-bg);
 }
 
 .footer-dropdown.inactive .footer-expandable {
-    animation: shrink .3s ease forwards;
+    animation: shrinkFooter .3s ease forwards;
 }
 
 .footer-dropdown.active .arrow {
-    animation: rotate .3s ease forwards;
+    animation: rotateFooter .3s ease forwards;
 }
 
 .footer-dropdown.inactive .arrow {
-    animation: rotateBack .3s ease forwards;
+    animation: rotateBackFooter .3s ease forwards;
 }
 
-@keyframes rotate {
+@keyframes rotateFooter {
     100% {
         transform: rotate(180deg);
     }
 }
 
-@keyframes rotateBack {
+@keyframes rotateBackFooter {
     0% {
         transform: rotate(180deg);
     }
@@ -62,13 +62,13 @@
     }
 }
 
-@keyframes expand {
+@keyframes expandFooter {
     100% {
         max-height: 300px;
     }
 }
 
-@keyframes shrink {
+@keyframes shrinkFooter {
     0% {
         max-height: 300px;
         border-bottom: 1px solid var(--solid-bg);
