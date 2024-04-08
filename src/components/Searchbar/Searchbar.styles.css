@@ -27,6 +27,7 @@
     position: absolute;
     left: 40px;
     transition: all .3s ease;
+    pointer-events: none;
 }
 
 .Searchbar input:focus  {
@@ -35,4 +36,17 @@
 
 .Searchbar input:focus + .placeholder  {
     transform: translateY(-10px);
+}
+
+.placeholder.floating {
+    transform: translateY(-10px);
+}
+
+.Searchbar .erase {
+    position: absolute;
+    left: unset;
+    right: 15px;
+    width: fit-content;
+    color: var(--white);
+    cursor: pointer;
 }

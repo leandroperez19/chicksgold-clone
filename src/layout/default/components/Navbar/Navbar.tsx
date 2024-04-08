@@ -1,8 +1,8 @@
-import { FC } from "react";
+import React, { FC, useRef, useState } from "react";
 import logo from "../../../../assets/chicks-logo-large.svg";
 import "./Navbar.styles.css";
 import { useScreen } from "../../../../hooks/useScreen";
-import { Category } from "../../../../types/category.types";
+import { Category, Game } from "../../../../types/category.types";
 import Searchbar from "../../../../components/Searchbar/Searchbar";
 
 type NavbarProps = {
@@ -65,42 +65,7 @@ const DesktopContent: FC<DesktopContentProps> = ({ categories }) => {
                 </div>
                 <div className="categories d-flex h-100">
                     {categories?.map((cat, i: number) => (
-                        <div className="category-nav h-100" key={i}>
-                            <div className="hover-item flex-center h-100 white gap-5">
-                                {cat.name.toUpperCase()}
-                                <span className="material-symbols-outlined white arrow-down">
-                                    expand_more
-                                </span>
-                            </div>
-                            <div className="nav-expandable d-flex">
-                                <div className="trending-games">
-                                    <h5 className="fs-regular fw-300">Trending Games</h5>
-                                    {cat.games.map((game, i) =>
-                                        game.isTrending && (
-                                            <div className="game d-flex gap-10 align-center fs-regular fw-300" key={i}>
-                                                <img src={game.icon.url} alt="icon"/>
-                                                <div>{game.name}</div>
-                                            </div>
-                                        )
-                                    )}
-                                </div>
-                                <div className="all-games">
-                                    <div className="search-container">
-                                        <Searchbar />
-                                    </div>
-                                    <div className="games d-grid">
-                                    {cat.games.map((game, i) =>
-                                        !game.isTrending && (
-                                            <div className="game d-flex gap-10 align-center fs-regular fw-300" key={i}>
-                                                <img src={game.icon.url} alt="icon"/>
-                                                <div>{game.name}</div>
-                                            </div>
-                                        )
-                                    )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <CategoryNav category={cat} key={i} />
                     ))}
                 </div>
             </div>
@@ -117,6 +82,86 @@ const DesktopContent: FC<DesktopContentProps> = ({ categories }) => {
                 </button>
             </div>
         </>
+    );
+};
+
+type CategoryNavProps = {
+    category: Category;
+};
+
+const CategoryNav: FC<CategoryNavProps> = ({ category }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const hoverIn = () => ref.current?.classList.add("hoverin");
+    const hoverOut = () => ref.current?.classList.remove("hoverin");
+    const trendingGames = category.games.filter((game) => game.isTrending)
+    const regularGames = category.games.filter((game) => !game.isTrending)
+
+    const [filteredRegular, setFilteredRegular] = useState<Game[] | null>(null);
+    const [filteredTrending, setFilteredTrending] = useState<Game[] | null>(null);
+
+    const search = (e: string) => {
+        const filteredRegular = regularGames.filter((game) =>
+            game.name.toLowerCase().includes(e.toLowerCase()) && category.games.includes(game)
+        );
+        const filteredTrending = trendingGames.filter((game) =>
+            game.name.toLowerCase().includes(e.toLowerCase()) && category.games.includes(game)
+        );
+        setFilteredRegular(filteredRegular);
+        setFilteredTrending(filteredTrending);
+    };
+
+    return (
+        <div className="category-nav h-100">
+            <div className="hover-item flex-center h-100 white gap-5" ref={ref}>
+                {category.name.toUpperCase()}
+                <span className="material-symbols-outlined white arrow-down">
+                    expand_more
+                </span>
+            </div>
+            <div
+                className="nav-expandable d-flex"
+                onMouseOver={hoverIn}
+                onMouseOut={hoverOut}
+            >
+                <div className="trending-games">
+                    <h5 className="fs-regular fw-300">Trending Games</h5>
+                    {filteredTrending
+                        ? filteredTrending.map((game, i) => (
+                              <GameContainer game={game} key={i} />
+                          ))
+                        : trendingGames.map((game, i) => (
+                              <GameContainer game={game} key={i} />
+                          ))}
+                </div>
+                <div className="all-games">
+                    <div className="search-container">
+                        <Searchbar onChange={search} />
+                    </div>
+                    <div className="games d-grid">
+                        {filteredRegular
+                            ? filteredRegular.map((game, i) => (
+                                  <GameContainer game={game} key={i} />
+                              ))
+                            : regularGames.map((game, i) => (
+                                  <GameContainer game={game} key={i} />
+                              ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+type GameContainerProps = {
+    game: Game;
+};
+
+const GameContainer: FC<GameContainerProps> = ({ game }) => {
+    return (
+        <div className="game d-flex gap-10 align-center fs-regular fw-300">
+            <img src={game.icon.url} alt="icon" />
+            <div>{game.name}</div>
+        </div>
     );
 };
 

@@ -72,17 +72,28 @@ nav .right button span {
         transition: height .3s ease;
     }
 
-    nav .left .categories .category-nav .hover-item:hover {
+    nav .left .categories .category-nav .hover-item:hover, .hover-item.hoverin {
         background-color: var(--text-secondary);
         color: var(--green);
     }
 
-    nav .left .categories .category-nav .hover-item:hover .arrow-down {
+    nav .left .categories .category-nav .hover-item:hover .arrow-down, .hover-item.hoverin .arrow-down {
         color: var(--green);
         transform: rotate(180deg);
     }
     
-    nav .left .categories .category-nav .hover-item:hover::before {
+    nav .left .categories .category-nav .hover-item:hover::before, .hover-item.hoverin::before {
+        height: 100%;
+    }
+
+    .hover-item.hoverin::after {
+        content: '';
+        width: 1px;
+        height: 0;
+        background-color: var(--green);
+        position: absolute;
+        bottom: 0;
+        left: 0;
         height: 100%;
     }
 
