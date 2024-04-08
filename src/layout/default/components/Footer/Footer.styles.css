@@ -1,0 +1,65 @@
+footer {
+    border-top: 1px solid var(--solid-bg);
+    bottom: 0;
+    margin-top: auto;
+    padding: 40px 40px 20px;
+    position: relative;
+    background-color: var(--nav-bg);
+    top: 100px;
+}
+
+.footer-logo-container {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.footer-logo-container img {
+    height: 48px;
+    width: 235px;
+}
+
+
+.footer-logo-container a {
+    font-size: var(--medium);
+    font-weight: 300;
+    margin-top: 18px;
+    color: var(--bright-gray);
+}
+
+.footer-content .dropdowns {
+    margin-top: 25px;
+}
+
+.footer-content .trustpilot {
+    margin: 28px auto 0;
+    width: fit-content;
+}
+
+.footer-content .trustpilot a {
+    opacity: .7;
+    font-weight: 400;
+}
+
+.footer-content .trustpilot .score {
+    margin-top: 8px;
+    gap: 5px;
+}
+
+.footer-content .trustpilot .score span {
+    font-weight: 500;
+    letter-spacing: .51px;
+}
+
+.socials {
+    margin: 20px auto 0;
+}
+
+.copyright {
+    font-size: var(--small);
+    font-weight: 400;
+    line-height: normal;
+    margin: 40px auto 0;
+    max-width: 215px;
+    opacity: .75;
+    text-align: center;
+}

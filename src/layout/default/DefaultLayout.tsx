@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { useScreen } from "../../hooks/useScreen";
 import { getCategories } from "../../services/categoryService";
 import { Category } from "../../types/category.types";
+import Footer from "./components/Footer/Footer";
 
 type DefaultLayaoutProps = {
     children: ReactNode;
@@ -44,6 +45,7 @@ const DefaultLayaout: FC<DefaultLayaoutProps> = ({ children }) => {
                 <Sidebar setState={sidebarToggle} reference={ref} categories={categories}/>
             )}
             {children}
+            <Footer />
         </div>
     );
 };

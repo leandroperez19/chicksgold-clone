@@ -5,6 +5,7 @@ nav {
     position: fixed;
     width: 100%;
     background-color: var(--nav-bg);
+    z-index: 50;
 }
 
 nav span {
@@ -12,7 +13,8 @@ nav span {
 }
 
 nav img {
-    height: 24px;
+    height: 32px;
+    width: 96px;
     margin-top: -12px;
 }
 

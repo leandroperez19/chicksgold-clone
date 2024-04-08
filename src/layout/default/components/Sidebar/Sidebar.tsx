@@ -64,11 +64,8 @@ const SidebarDropdown: FC<SidebarDropdownProps> = ({
     }, [isActive]);
 
     return (
-        <div
-            className={`sidebar-dropdown w-100 ${isActive ? "active" : "inactive"}`}
-            onClick={onToggle}
-        >
-            <div className="label w-100 d-flex align-center justify-between">
+        <div className={`sidebar-dropdown w-100 ${isActive ? "active" : "inactive"}`}>
+            <div className="label w-100 d-flex align-center justify-between" onClick={onToggle}>
                 <div className="text">{label}</div>
                 <span className="material-symbols-outlined arrow-down">
                     arrow_drop_down

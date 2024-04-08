@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import logo from "../../../../assets/chicks-logo-large.svg";
 import "./Navbar.styles.css";
 import { useScreen } from "../../../../hooks/useScreen";

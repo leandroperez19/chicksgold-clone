@@ -10,10 +10,15 @@ a:visited {
     color: inherit;
 }
 
+ul {
+    list-style: none;
+}
+
 :root{
     --green: #39e29d;
     --purple: #5762d5;
     --white: #ffffff;
+    --bright-gray: #fafcff;
     --light-white: #ffffff8c;
     --text-primary: #000000de;
     --text-secondary: #37384b;
@@ -48,6 +53,11 @@ button {
     border: none;
     outline: none;
     background-color: unset;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
 }
 
 ::-webkit-scrollbar {
