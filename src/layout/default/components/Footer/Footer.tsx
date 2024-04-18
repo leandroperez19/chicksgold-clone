@@ -55,7 +55,7 @@ const Footer: FC<FooterProps> = () => {
                     </div>
                 </div>
                 <div className="socials flex-center">
-                    <h4 className="d-s-none d-block">Social</h4>
+                    <h4 className="d-s-none">Social</h4>
                     <Social />
                 </div>
                 <div className="copyright">
