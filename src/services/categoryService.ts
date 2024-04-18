@@ -1,5 +1,5 @@
 import { gql, request } from "graphql-request";
-import { Category } from "../types/category.types";
+import { Category } from "./categoryService.types";
 
 const MASTER_URL =
     "https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clu4migp60sj807w2xergiy9k/master";

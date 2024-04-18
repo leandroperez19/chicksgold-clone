@@ -10,7 +10,9 @@ footer {
     @media (768px <= width) {
         padding: 30px 40px 20px;
     }
+}
 
+footer {
     @media (1024px <= width) {
         padding: 40px 40px 20px;
         border: none;
@@ -26,7 +28,9 @@ footer {
         max-width: 1188px;
         margin-inline: auto;
     }
+}
 
+.footer-content {
     @media (1024px <= width) {
         min-height: 325px;
     }
@@ -63,7 +67,9 @@ footer {
         opacity: 0.7;
         font-size: var(--regular);
     }
+}
 
+.footer-logo-container a {
     @media (1024px <= width) {
         margin-top: 20px;
         opacity: 1;
@@ -82,7 +88,9 @@ footer {
         margin-top: 10px;
         margin-right: 10px;
     }
+}
 
+.footer-content .dropdowns {
     @media (1024px <= width) {
         margin-top: 20px;
         display: flex;
@@ -101,7 +109,9 @@ footer {
         right: 0;
         top: 125px;
     }
+}
 
+.footer-content .trustpilot {
     @media (1024px <= width) {
         top: 80px;
         right: 29px;
@@ -117,16 +127,6 @@ footer {
     }
 }
 
-.footer-content .trustpilot .score {
-    margin-top: 8px;
-    gap: 5px;
-}
-
-.footer-content .trustpilot .score span {
-    font-weight: 500;
-    letter-spacing: 0.51px;
-}
-
 .socials {
     margin: 20px auto 0;
 
@@ -136,21 +136,15 @@ footer {
         top: 85px;
         width: 156px;
     }
+}
 
+.socials {
     @media (1024px <= width) {
         position: relative;
         top: unset;
         height: fit-content;
         flex-direction: column;
         margin-top: 20px;
-
-        h4 {
-            display: block;
-            text-align: left;
-            width: 100%;
-            font-size: var(--extra-large);
-            margin-bottom: 20px;
-        }
     }
 }
 

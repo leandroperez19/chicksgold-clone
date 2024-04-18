@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import "./Sidebar.styles.css";
 import Searchbar from "../../../../components/Searchbar/Searchbar";
-import { Category, Game } from "../../../../types/category.types";
+import { Category, Game } from "../../../../services/categoryService.types";
 
 type SidebarProps = {
     setState: () => void,

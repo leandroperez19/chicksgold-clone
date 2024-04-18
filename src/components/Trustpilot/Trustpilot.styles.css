@@ -1,0 +1,9 @@
+.score {
+    margin-top: 8px;
+    gap: 5px;
+}
+
+.score span {
+    font-weight: 500;
+    letter-spacing: 0.51px;
+}

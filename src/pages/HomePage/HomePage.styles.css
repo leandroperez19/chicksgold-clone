@@ -1,0 +1,12 @@
+.Homepage {
+    position: relative;
+}
+
+.Homepage img.desktop-bg, .Homepage img.mobile-bg{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+    z-index: -1;
+}

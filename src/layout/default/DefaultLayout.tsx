@@ -3,14 +3,14 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { useScreen } from "../../hooks/useScreen";
 import { getCategories } from "../../services/categoryService";
-import { Category } from "../../types/category.types";
+import { Category } from "../../services/categoryService.types";
 import Footer from "./components/Footer/Footer";
 
-type DefaultLayaoutProps = {
+type DefaultLayoutProps = {
     children: ReactNode;
 };
 
-const DefaultLayaout: FC<DefaultLayaoutProps> = ({ children }) => {
+const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
     const [sidebarState, setSidebarState] = useState<boolean>(false);
     const [categories, setCategories] = useState<Category[] | null>(null);
     const ref = useRef<HTMLDivElement | null>(null);
@@ -50,4 +50,4 @@ const DefaultLayaout: FC<DefaultLayaoutProps> = ({ children }) => {
     );
 };
 
-export default DefaultLayaout;
+export default DefaultLayout;

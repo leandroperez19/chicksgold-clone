@@ -2,7 +2,7 @@ import { FC, useRef, useState } from "react";
 import logo from "../../../../assets/chicks-logo-large.svg";
 import "./Navbar.styles.css";
 import { useScreen } from "../../../../hooks/useScreen";
-import { Category, Game } from "../../../../types/category.types";
+import { Category, Game } from "../../../../services/categoryService.types";
 import Searchbar from "../../../../components/Searchbar/Searchbar";
 
 type NavbarProps = {

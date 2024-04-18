@@ -116,3 +116,8 @@
 .fw-300 {
     font-weight: 300;
 }
+
+.page-container {
+    width: 94.7%;
+    min-height: 70dvh;
+}

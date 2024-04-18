@@ -1,13 +1,12 @@
 import { FC, useState } from "react";
 import "./Footer.styles.css";
 import logo from "../../../../assets/chicks-logo-large.svg";
-import starFull from "../../../../assets/star_full.svg";
-import starSemisesqui from "../../../../assets/star_semisesqui.svg";
 import { sections } from "./sections";
 import FooterDropdown from "./components/footerDropdown/footerDropdown";
 import Social from "./components/social/social";
 import { useScreen } from "../../../../hooks/useScreen";
 import FooterSection from "./components/footerSection/footerSection";
+import Trustpilot from "../../../../components/Trustpilot/Trustpilot";
 
 type FooterProps = {};
 
@@ -43,16 +42,7 @@ const Footer: FC<FooterProps> = () => {
                 </div>
                 <div className="trustpilot">
                     <a href="/">Trustpilot Reviews</a>
-                    <div className="score d-flex align-center">
-                        <div className="stars d-flex align-center">
-                            <img src={starFull} alt="star"/>
-                            <img src={starFull} alt="star"/>
-                            <img src={starFull} alt="star"/>
-                            <img src={starFull} alt="star"/>
-                            <img src={starSemisesqui} alt="star"/>
-                        </div>
-                        <span>4.6/5</span>
-                    </div>
+                    <Trustpilot />
                 </div>
                 <div className="socials flex-center">
                     <h4>Social</h4>
