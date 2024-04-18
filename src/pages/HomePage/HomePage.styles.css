@@ -1,5 +1,6 @@
 .Homepage {
     position: relative;
+    padding-top: 72px;
 }
 
 .Homepage img.desktop-bg, .Homepage img.mobile-bg{
@@ -9,4 +10,29 @@
     left: 0;
     user-select: none;
     z-index: -1;
+}
+
+.Homepage .main-content-container {
+    padding-inline: 20px;
+}
+
+.Homepage .main-content-container .welcome {
+    margin-top: 67px;
+    padding-inline: 5px;
+    width: 90%;
+}
+
+.welcome h1 {
+    font-size: 24px;
+    letter-spacing: .96px;
+    line-height: 35px;
+    width: 100%;
+}
+
+.welcome p {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: .77px;
+    line-height: 1.43;
+    font-size: var(--regular);
+    opacity: .75;
 }

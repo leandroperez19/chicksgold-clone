@@ -15,8 +15,11 @@ const HomePage: FC<HomePageProps> = () => {
       <Head name="Home"/>
       <div className="Homepage">
         <img src={isMobile ? MobileBg : DesktopBg} className={isMobile ? 'mobile-bg' : 'desktop-bg'} alt="background"/>
-        <div className="page-container">
-          
+        <div className="main-content-container">
+          <div className="welcome">
+            <h1>Welcome to Chicks Gold.</h1>
+            <p>Your destination to buy, sell, boost or swap your video game assets.</p>
+          </div>
         </div>
       </div>
     </>
