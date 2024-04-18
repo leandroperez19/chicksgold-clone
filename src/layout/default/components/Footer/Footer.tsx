@@ -24,7 +24,7 @@ const Footer: FC<FooterProps> = () => {
         <footer>
             <div className="footer-content">
                 <div className="footer-logo-container">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo"/>
                     <a href="mailto:support@chicksgold.com" className="d-block">
                         support@chicksgold.com
                     </a>
@@ -45,17 +45,17 @@ const Footer: FC<FooterProps> = () => {
                     <a href="/">Trustpilot Reviews</a>
                     <div className="score d-flex align-center">
                         <div className="stars d-flex align-center">
-                            <img src={starFull} alt="star" />
-                            <img src={starFull} alt="star" />
-                            <img src={starFull} alt="star" />
-                            <img src={starFull} alt="star" />
-                            <img src={starSemisesqui} alt="star" />
+                            <img src={starFull} alt="star"/>
+                            <img src={starFull} alt="star"/>
+                            <img src={starFull} alt="star"/>
+                            <img src={starFull} alt="star"/>
+                            <img src={starSemisesqui} alt="star"/>
                         </div>
                         <span>4.6/5</span>
                     </div>
                 </div>
                 <div className="socials flex-center">
-                    <h4 className="d-s-none">Social</h4>
+                    <h4>Social</h4>
                     <Social />
                 </div>
                 <div className="copyright">
