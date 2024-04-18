@@ -1,0 +1,32 @@
+.footer-section h4 {
+    font-size: var(--medium);
+    font-weight: 700;
+    line-height: normal;
+
+    @media (1024px <= width) {
+        font-size: var(--extra-large);
+    }
+}
+
+.footer-section ul {
+    margin-top: 17px;
+}
+
+.footer-section ul li a{
+    width: fit-content;
+    color: var(--li-color);
+    opacity: .75;
+    font-size: var(--regular);
+    font-weight: 300;
+    margin-bottom: 12px;
+    line-height: normal;
+    letter-spacing: normal;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @media (1024px <= width) {
+        margin-bottom: 15px;
+    }
+}

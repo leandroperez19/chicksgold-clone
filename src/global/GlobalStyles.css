@@ -17,6 +17,7 @@ ul {
 :root{
     --green: #39e29d;
     --purple: #5762d5;
+    --purple-hover: #4a53b5;
     --white: #ffffff;
     --bright-gray: #fafcff;
     --light-white: #ffffff8c;
@@ -30,6 +31,7 @@ ul {
     --solid-bg: #4c6085;
     --sidebar-bg: #2d3344;
     --expandable-bg: #2b2c3c;
+    --li-color: #fafcffb3;
     --tiny: 10px;
     --small: 12px;
     --regular: 14px;

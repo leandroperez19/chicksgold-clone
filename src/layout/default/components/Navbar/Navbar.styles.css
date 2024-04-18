@@ -16,6 +16,14 @@ nav img {
     height: 32px;
     width: 96px;
     margin-top: -12px;
+
+    @media (768px <= width) {
+        width: 125px;
+    }
+
+    @media (1024px <= width) {
+        width: 155px;
+    }
 }
 
 nav .right button {

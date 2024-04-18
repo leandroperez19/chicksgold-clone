@@ -17,8 +17,8 @@ const FooterDropdown: FC<FooterDropdownProps> = ({ section, onToggle, isActive }
             </div>
             <div className="footer-expandable">
                 <ul>
-                    {section.sections.map((sec) => (
-                        <li className="d-block">
+                    {section.sections.map((sec, i) => (
+                        <li className="d-block" key={i}>
                             <a href={sec.routeName}>{sec.name}</a>
                         </li>
                     ))}

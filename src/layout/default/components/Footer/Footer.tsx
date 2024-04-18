@@ -6,11 +6,14 @@ import starSemisesqui from "../../../../assets/star_semisesqui.svg";
 import { sections } from "./sections";
 import FooterDropdown from "./components/footerDropdown/footerDropdown";
 import Social from "./components/social/social";
+import { useScreen } from "../../../../hooks/useScreen";
+import FooterSection from "./components/footerSection/footerSection";
 
 type FooterProps = {};
 
 const Footer: FC<FooterProps> = () => {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const { isMobile } = useScreen()
 
     const dropdownToggle = (label: string) =>
         label === activeDropdown
@@ -26,14 +29,16 @@ const Footer: FC<FooterProps> = () => {
                         support@chicksgold.com
                     </a>
                 </div>
-                <div className="dropdowns">
+                <div className="dropdowns sections">
                     {sections.map((section, i) => (
+                        isMobile ? 
                         <FooterDropdown
                             section={section}
                             key={i}
                             onToggle={() => dropdownToggle(section.name)}
                             isActive={section.name === activeDropdown}
-                        />
+                        />:
+                        <FooterSection section={section} key={i}/>
                     ))}
                 </div>
                 <div className="trustpilot">
@@ -50,6 +55,7 @@ const Footer: FC<FooterProps> = () => {
                     </div>
                 </div>
                 <div className="socials flex-center">
+                    <h4 className="d-s-none d-block">Social</h4>
                     <Social />
                 </div>
                 <div className="copyright">

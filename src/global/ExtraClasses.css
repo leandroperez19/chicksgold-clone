@@ -14,6 +14,18 @@
     display: none;
 }
 
+.d-xs-none {
+    @media (width < 768px) {
+        display: none;
+    }
+}
+
+.d-s-none {
+    @media (width < 1024px) {
+        display: none;
+    }
+}
+
 .d-xs-block {
     @media (max-width: 768px) {
         display: block;
