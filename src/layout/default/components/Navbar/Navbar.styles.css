@@ -1,11 +1,17 @@
 nav {
     height: 72px;
     padding-inline: 15px;
-    /* border-bottom: 1px solid var(--semi-transparent-bg); */
+    border-bottom: 1px solid var(--semi-transparent-bg);
     position: fixed;
     width: 100%;
-    /* background-color: var(--nav-bg); */
+    background-color: var(--nav-bg);
     z-index: 50;
+    transition: all .3s ease;
+}
+
+nav.navbar-transparent {
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
 }
 
 nav span {
@@ -240,3 +246,8 @@ nav .right button span {
     }
 }
 
+@media (1200px <= width) {
+    nav .left .categories .category-nav .hover-item {
+        padding-inline: 32px;
+    }
+}

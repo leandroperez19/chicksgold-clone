@@ -14,6 +14,7 @@
 
 .Homepage .main-content-container {
     padding-inline: 20px;
+    margin-inline: auto;
 }
 
 .Homepage .main-content-container .welcome {
@@ -23,7 +24,7 @@
 }
 
 .welcome h1 {
-    font-size: 24px;
+    font-size: var(--extra-extra-large);
     letter-spacing: .96px;
     line-height: 35px;
     width: 100%;
@@ -35,4 +36,91 @@
     line-height: 1.43;
     font-size: var(--regular);
     opacity: .75;
+}
+
+.Homepage .main-content-container .reviews {
+    margin-top: 40px;
+    font-size: var(--small);
+}
+
+.Homepage .main-content-container .reviews a {
+    color: var(--green);
+}
+
+.Homepage .main-content-container .reviews a:hover span:first-of-type {
+    text-decoration: underline;
+}
+
+@media (768px <= width) {
+    .Homepage .main-content-container .welcome {
+        width: 60%;
+        padding: 0;
+        margin-top: 65px;
+    }
+
+    .welcome h1 {
+        font-size: var(--tablet-main-title);
+        letter-spacing: 2.08px;
+    }
+
+    .Homepage .main-content-container .reviews {
+        margin-top: 50px;
+        gap: 0;
+    }
+}
+
+@media (1024px <= width) {
+    .Homepage .main-content-container {
+        max-width: 960px;
+    }
+
+    .Homepage .main-content-container .welcome {
+        width: auto;
+        margin-top: 80px;
+    }
+
+    .welcome h1 {
+        font-size: var(--desktop-main-title);
+        line-height: normal;
+    }
+
+    .welcome p {
+        width: 50%;
+        font-size: var(--extra-extra-large);
+        line-height: normal;
+    }
+
+    .Homepage .main-content-container .reviews {
+        font-size: var(--medium);
+    }
+}
+
+@media (1200px <= width) {
+    .Homepage .main-content-container {
+        max-width: 1260px;
+        padding-inline: 15px;
+    }
+
+    .Homepage .main-content-container .welcome {
+        margin-top: 120px;
+        padding-inline: 0;
+    }
+}
+
+@media (1400px <= width) {
+    .Homepage .main-content-container .welcome {
+        margin-top: 145px;
+    }
+
+    .welcome h1 {
+        line-height: 98px;
+    }
+
+    .Homepage .main-content-container .reviews {
+        gap: 10px;
+    }
+
+    .Homepage .main-content-container .reviews .text {
+        gap: 10px;
+    }
 }

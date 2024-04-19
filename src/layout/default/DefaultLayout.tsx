@@ -39,7 +39,7 @@ const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
     }, []);
 
     return (
-        <div>
+        <div className="app-container">
             <Navbar sidebarToggle={sidebarToggle} categories={categories}/>
             {sidebarState && isMobile && (
                 <Sidebar setState={sidebarToggle} reference={ref} categories={categories}/>

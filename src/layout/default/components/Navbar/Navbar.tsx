@@ -12,14 +12,15 @@ type NavbarProps = {
 
 const Navbar: FC<NavbarProps> = ({ sidebarToggle, categories }) => {
     const { isMobile } = useScreen(1024);
+    const ref = useRef<HTMLElement | null>(null)
 
     return (
-        <nav className="d-flex align-center">
+        <nav className="d-flex align-center" ref={ref}>
             <div className="nav-content d-flex align-center justify-between full-size">
                 {isMobile ? (
                     <MobileContent sidebarToggle={sidebarToggle} />
                 ) : (
-                    <DesktopContent categories={categories} />
+                    <DesktopContent categories={categories} reference={ref}/>
                 )}
             </div>
         </nav>
@@ -54,9 +55,10 @@ const MobileContent: FC<MobileContentProps> = ({ sidebarToggle }) => {
 
 type DesktopContentProps = {
     categories: Category[] | null;
+    reference: React.MutableRefObject<HTMLElement | null>
 };
 
-const DesktopContent: FC<DesktopContentProps> = ({ categories }) => {
+const DesktopContent: FC<DesktopContentProps> = ({ categories, reference }) => {
     return (
         <>
             <div className="left flex-center h-100">
@@ -65,7 +67,7 @@ const DesktopContent: FC<DesktopContentProps> = ({ categories }) => {
                 </div>
                 <div className="categories d-flex h-100">
                     {categories?.map((cat, i: number) => (
-                        <CategoryNav category={cat} key={i} />
+                        <CategoryNav category={cat} key={i} reference={reference}/>
                     ))}
                 </div>
             </div>
@@ -87,12 +89,18 @@ const DesktopContent: FC<DesktopContentProps> = ({ categories }) => {
 
 type CategoryNavProps = {
     category: Category;
+    reference: React.MutableRefObject<HTMLElement | null>
 };
 
-const CategoryNav: FC<CategoryNavProps> = ({ category }) => {
+const CategoryNav: FC<CategoryNavProps> = ({ category, reference }) => {
     const ref = useRef<HTMLDivElement>(null);
     const hoverIn = () => ref.current?.classList.add("hoverin");
     const hoverOut = () => ref.current?.classList.remove("hoverin");
+
+    const categoryHoverIn = () => reference.current?.classList.remove('navbar-transparent');
+    const categoryHoverOut = () => reference.current?.classList.add('navbar-transparent');
+
+    
     const trendingGames = category.games.filter((game) => game.isTrending)
     const regularGames = category.games.filter((game) => !game.isTrending)
 
@@ -112,7 +120,7 @@ const CategoryNav: FC<CategoryNavProps> = ({ category }) => {
 
     return (
         <div className="category-nav h-100">
-            <div className="hover-item flex-center h-100 white gap-5" ref={ref}>
+            <div className="hover-item flex-center h-100 white gap-5" ref={ref} onMouseOver={categoryHoverIn} onMouseOut={categoryHoverOut}>
                 {category.name.toUpperCase()}
                 <span className="material-symbols-outlined white arrow-down">
                     expand_more
