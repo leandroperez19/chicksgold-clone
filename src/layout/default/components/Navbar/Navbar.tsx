@@ -94,8 +94,14 @@ type CategoryNavProps = {
 
 const CategoryNav: FC<CategoryNavProps> = ({ category, reference }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const hoverIn = () => ref.current?.classList.add("hoverin");
-    const hoverOut = () => ref.current?.classList.remove("hoverin");
+    const hoverIn = () => {
+        categoryHoverIn()
+        ref.current?.classList.add("hoverin")
+    };
+    const hoverOut = () => {
+        categoryHoverOut()
+        ref.current?.classList.remove("hoverin")
+    };
 
     const categoryHoverIn = () => reference.current?.classList.remove('navbar-transparent');
     const categoryHoverOut = () => reference.current?.classList.add('navbar-transparent');
