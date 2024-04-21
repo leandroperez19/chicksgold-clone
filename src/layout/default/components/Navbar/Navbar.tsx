@@ -104,7 +104,10 @@ const CategoryNav: FC<CategoryNavProps> = ({ category, reference }) => {
     };
 
     const categoryHoverIn = () => reference.current?.classList.remove('navbar-transparent');
-    const categoryHoverOut = () => reference.current?.classList.add('navbar-transparent');
+    const categoryHoverOut = () => {
+        if(window.scrollY >= 30) return
+        reference.current?.classList.add('navbar-transparent')
+    };
 
     
     const trendingGames = category.games.filter((game) => game.isTrending)

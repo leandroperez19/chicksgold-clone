@@ -13,11 +13,8 @@ const Sidebar: FC<SidebarProps> = ({ setState, reference, categories }) => {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     const handleDropdownToggle = (label: string) => {
-        if (label === activeDropdown) {
-            setActiveDropdown(null);
-        } else {
-            setActiveDropdown(label);
-        }
+        if (label === activeDropdown) setActiveDropdown(null);
+        else setActiveDropdown(label);
     };
 
     return (
