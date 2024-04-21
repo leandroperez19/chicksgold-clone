@@ -51,6 +51,16 @@
     text-decoration: underline;
 }
 
+.Homepage .main-content-container .home-cards {
+    overflow-y: scroll;
+    margin-top: 60px;
+    gap: 15px;
+}
+
+.Homepage .main-content-container .home-cards::-webkit-scrollbar {
+    display: none;
+}
+
 @media (768px <= width) {
     .Homepage .main-content-container .welcome {
         width: 60%;
@@ -66,6 +76,12 @@
     .Homepage .main-content-container .reviews {
         margin-top: 50px;
         gap: 0;
+    }
+
+    .Homepage .main-content-container .home-cards {
+        gap: 8px;
+        margin-top: 90px;
+        overflow: hidden;
     }
 }
 
@@ -93,6 +109,10 @@
     .Homepage .main-content-container .reviews {
         font-size: var(--medium);
     }
+
+    .Homepage .main-content-container .home-cards {
+        gap: 15px;
+    }
 }
 
 @media (1200px <= width) {
@@ -104,6 +124,10 @@
     .Homepage .main-content-container .welcome {
         margin-top: 120px;
         padding-inline: 0;
+    }
+
+    .Homepage .main-content-container .home-cards {
+        margin-top: 130px;
     }
 }
 

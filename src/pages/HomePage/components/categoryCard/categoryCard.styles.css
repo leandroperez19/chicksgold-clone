@@ -1,0 +1,75 @@
+.Category-card {
+    background: rgba(76, 96, 133, .15) 0 0 no-repeat padding-box;
+    padding-block: 24px;
+    min-height: 184px;
+    min-width: 174px;
+    justify-content: space-evenly;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.Category-card .image {
+    position: relative;
+}
+
+.Category-card .image img:first-of-type {
+    position: absolute;
+    max-height: 60px;
+    max-width: 62px;
+    transition: transform .3s ease;
+}
+
+.Category-card .image img:last-of-type {
+    max-height: 35px;
+    max-width: 33px;
+}
+
+.Category-card .name {
+    margin-bottom: -12px;
+    text-align: center;
+}
+
+.Category-card:hover {
+    background: rgba(76, 96, 133, .3) 0 0 no-repeat padding-box;
+}
+
+.Category-card:hover .image img:first-of-type {
+    transform: rotate(90deg);
+}
+
+.Category-card:hover .name .cg-line {
+    width: 50px;
+}
+
+@media (768px <= width) {
+    .Category-card {
+        min-width: 140px;
+        min-height: 191px;
+        flex-basis: 100%;
+    }
+
+    .Category-card .name {
+        gap: 15px;
+    }
+}
+
+@media (1024px <= width) {
+    .Category-card {
+        min-height: 224px;
+        min-width: unset;
+    }
+
+    .Category-card .image img:first-of-type {
+        max-height: 76px;
+        max-width: 80px;
+    }
+
+    .Category-card .image img:last-of-type {
+        max-width: unset;
+        max-height: unset;
+    }
+
+    .Category-card .name {
+        font-size: var(--medium);
+    }
+}

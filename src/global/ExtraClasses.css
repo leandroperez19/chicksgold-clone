@@ -121,3 +121,11 @@
     width: 94.7%;
     min-height: 70dvh;
 }
+
+.cg-line {
+    height: 4px;
+    width: 30px;
+    border-radius: 4px;
+    transition: .3s ease;
+    background-color: var(--purple);
+}

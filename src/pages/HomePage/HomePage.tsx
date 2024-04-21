@@ -6,6 +6,8 @@ import MobileBg from '../../assets/background-mobile.png';
 import DesktopBg from '../../assets/home-page-background.jpg';
 import Badge from '../../assets/award.svg';
 import Trustpilot from "../../components/Trustpilot/Trustpilot";
+import CategoryCard from "./components/categoryCard/categoryCard";
+import { categories } from "./static";
 
 type HomePageProps = {}
 
@@ -47,6 +49,11 @@ const HomePage: FC<HomePageProps> = () => {
                 <span className="material-symbols-outlined">arrow_forward</span>
               </a>
             </div>
+          </div>
+          <div className="home-cards d-flex">
+              {categories.map((cat, i) => (
+                <CategoryCard name={cat.name} imgSrc={cat.img} key={i}/>
+              ))}
           </div>
         </div>
       </div>
