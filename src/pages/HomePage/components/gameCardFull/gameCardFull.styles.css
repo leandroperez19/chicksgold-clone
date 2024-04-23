@@ -1,0 +1,104 @@
+.GameCardFull {
+    position: relative;
+    min-height: 184px;
+    cursor: pointer;
+}
+
+.GameCardFull img.bg-img {
+    position: absolute;
+    z-index: -1;
+}
+
+.GameCardFull .card-content {
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+}
+
+.GameCardFull .card-content h5 {
+    margin-bottom: 8px;
+    font-size: var(--large);
+    letter-spacing: 1.2px;
+}
+
+.GameCardFull .card-content img.icon {
+    width: 35px;
+    height: 35px;
+}
+
+@media (768px <= width) {
+    .GameCardFull {
+        min-height: 175px;
+        transition: transform .3s ease;
+    }
+}
+
+@media (1024px <= width) {
+    .GameCardFull {
+        height: 305px;
+    }
+
+    .GameCardFull:hover {
+        transform: scale(1.02);
+    }
+
+    .GameCardFull .card-content h5 {
+        font-size: var(--extra-large);
+    }
+
+    .GameCardFull .card-content p {
+        font-family: 'Playfair Display', serif;
+        width: 88%;
+        font-size: var(--regular);
+        color: rgba(255, 255, 255, .75);
+        margin-top: 10px;
+        letter-spacing: .68px;
+        line-height: 2;
+    }
+    
+    .GameCardFull .card-content button {
+        border: 1px solid var(--green);
+        border-radius: 5px;
+        padding: 10px 25px;
+        color: var(--green);
+        cursor: pointer;
+    }
+
+    .GameCardFull .card-content button:hover {
+        background-color: var(--green-hover);
+    }
+
+    .GameCardFull .card-content p, .GameCardFull .card-content button {
+        transform: scale(0);
+        opacity: 0;
+        transition: all .3s ease;
+        display: none;
+    }
+    
+    .GameCardFull:hover .card-content .cg-line {
+        width: 80px;
+    }
+
+    .GameCardFull:hover .card-content p, .GameCardFull:hover .card-content button {
+        transform: scale(1);
+        opacity: 1;
+        display: block;
+    }
+
+    .GameCardFull:hover .card-content img.icon {
+        transform: scale(0);
+        opacity: 0;
+        height: 0;
+        display: none;
+    }
+
+    .GameCardFull .card-content img.icon {
+        width: 70px;
+        height: 70px;
+        transition: all .3s ease;
+        display: block;
+    }
+}

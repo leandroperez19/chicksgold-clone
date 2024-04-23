@@ -16,6 +16,7 @@ ul {
 
 :root{
     --green: #39e29d;
+    --green-hover: #39e29d33;
     --purple: #5762d5;
     --purple-hover: #4a53b5;
     --white: #ffffff;

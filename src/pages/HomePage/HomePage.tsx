@@ -7,7 +7,8 @@ import DesktopBg from '../../assets/home-page-background.jpg';
 import Badge from '../../assets/award.svg';
 import Trustpilot from "../../components/Trustpilot/Trustpilot";
 import CategoryCard from "./components/categoryCard/categoryCard";
-import { categories } from "./static";
+import { categories, mainGames } from "./static";
+import GameCardFull from "./components/gameCardFull/gameCardFull";
 
 type HomePageProps = {}
 
@@ -54,6 +55,13 @@ const HomePage: FC<HomePageProps> = () => {
               {categories.map((cat, i) => (
                 <CategoryCard name={cat.name} imgSrc={cat.img} key={i}/>
               ))}
+          </div>
+          <div className="main-games-card">
+            {
+              mainGames.map((game, i) => (
+                <GameCardFull name={game.name} text={game.text} icon={game.icon} img={game.img} key={i}/>
+              ))
+            }
           </div>
         </div>
       </div>

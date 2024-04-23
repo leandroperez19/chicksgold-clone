@@ -61,6 +61,13 @@
     display: none;
 }
 
+.Homepage .main-content-container .main-games-card {
+    margin-top: 40px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
 @media (768px <= width) {
     .Homepage .main-content-container .welcome {
         width: 60%;
@@ -82,6 +89,10 @@
         gap: 8px;
         margin-top: 90px;
         overflow: hidden;
+    }
+
+    .Homepage .main-content-container .main-games-card {
+        margin-top: 32px;
     }
 }
 
@@ -112,6 +123,11 @@
 
     .Homepage .main-content-container .home-cards {
         gap: 15px;
+    }
+
+    .Homepage .main-content-container .main-games-card {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 56px;
     }
 }
 
