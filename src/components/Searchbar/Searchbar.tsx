@@ -12,7 +12,7 @@ const Searchbar: FC<SearchbarProps> = ({ onChange }) => {
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
         if(!onChange) return;
-        onChange(inputValue);
+        onChange(e.target.value);
     };
 
     const eraseHandler = () => {
