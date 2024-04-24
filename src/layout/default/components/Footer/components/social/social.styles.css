@@ -10,6 +10,7 @@
     background-color: var(--purple);
     transition: background-color .3s ease;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
         background-color: var(--purple-hover);
