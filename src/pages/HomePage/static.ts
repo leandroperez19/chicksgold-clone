@@ -11,6 +11,13 @@ import treasure from '../../assets/icon_treasure.svg';
 import wowClassic from '../../assets/wow-classic-card-background.webp';
 import gameHelmet from '../../assets/icon_helmet.svg';
 import wowClassicAcc from '../../assets/wow-classic-accounts-card-background.webp';
+import lostArkGame from '../../assets/lost-ark-game.webp';
+import wowGame from '../../assets/wow-classic-game.webp';
+import diablo from '../../assets/diablo-ii-game.webp';
+import tarkov from '../../assets/tarkov-game.webp';
+import finalFantasy from '../../assets/final-fantasy-game.webp';
+import pathExile from '../../assets/path-exile-game.webp';
+import fortnite from '../../assets/fornite-game.webp';
 
 export const categories = [
     {
@@ -70,3 +77,43 @@ export const mainGames = [
         src: ''
     }
 ]
+
+export const otherGames = [
+    {
+        title: 'Lost Ark',
+        img: lostArkGame,
+        src: ''
+    },
+    {
+        title: 'WoW Classic',
+        img: wowGame,
+        src: ''
+    },
+    {
+        title: 'Diablo II',
+        img: diablo,
+        src: ''
+    },
+    {
+        title: 'Escape from Tarkov',
+        img: tarkov,
+        src: ''
+    },
+    {
+        title: 'Final Fantasy XIV',
+        img: finalFantasy,
+        src: ''
+    },
+    {
+        title: 'Path of Exile',
+        img: pathExile,
+        src: ''
+    },
+    {
+        title: 'Fortnite',
+        img: fortnite,
+        src: ''
+    },
+]
+
+export const simpleCards = ['Instant & Safe Delivery', 'Amazing Prices', 'English Support', 'Satisfaction Guaranteed']

@@ -1,0 +1,63 @@
+.Page-content-area {
+    position: relative;
+}
+
+.Page-content-area h1,
+.Page-content-area h2,
+.Page-content-area h3,
+.Page-content-area h4,
+.Page-content-area h5 {
+    font-size: var(--large);
+    color: var(--white);
+    margin-bottom: 8px;
+    position: relative;
+    width: fit-content;
+}
+
+.Page-content-area h1.underlined::after,
+.Page-content-area h2.underlined::after,
+.Page-content-area h3.underlined::after,
+.Page-content-area h4.underlined::after,
+.Page-content-area h5.underlined::after {
+    content: "";
+    display: block;
+    margin-top: 8px;
+    background-color: var(--purple);
+    width: 50%;
+    position: relative;
+    height: 4px;
+    border-radius: 10px;
+}
+
+.Page-content-area p {
+    font-size: var(--regular);
+    color: var(--brighter-gray);
+    line-height: 2;
+    font-family: "Playfair Display", serif;
+}
+
+.Page-content-area p:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+}
+
+@media (1024px <= width) {
+    .Page-content-area h1,
+    .Page-content-area h2,
+    .Page-content-area h3,
+    .Page-content-area h4,
+    .Page-content-area h5 {
+        font-size: var(--extra-extra-large);
+    }
+
+    .Page-content-area h1.underlined::after,
+    .Page-content-area h2.underlined::after,
+    .Page-content-area h3.underlined::after,
+    .Page-content-area h4.underlined::after,
+    .Page-content-area h5.underlined::after {
+        margin-bottom: 32px;
+    }
+
+    .Page-content-area p {
+        font-size: var(--medium);
+    }
+}

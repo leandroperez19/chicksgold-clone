@@ -1,6 +1,7 @@
 .Homepage {
     position: relative;
     padding-top: 72px;
+    padding-bottom: 40px;
 }
 
 .Homepage img.desktop-bg, .Homepage img.mobile-bg{
@@ -68,7 +69,47 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+.Homepage .main-content-container .games-simple-cards {
+    margin-top: 40px;
+}
+
+.Homepage .main-content-container .games-simple-cards .title {
+    font-size: var(--large);
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.Homepage .main-content-container .games-simple-cards .title .dots {
+    max-width: 50px;
+    width: 100%;
+}
+
+.Homepage .main-content-container .games-simple-cards .cards {
+    margin-top: 35px;
+}
+
+.games-simple-cards .cards .first-div, .games-simple-cards .cards .second-div {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 206px;
+}
+
+@media (600px <= width) {
+    .games-simple-cards .cards .first-div {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fill, minmax(206px, 1fr));
+    }
+
+    .games-simple-cards .cards .second-div {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(150px, 190px));
+    }
+}
+
 @media (768px <= width) {
+    .Homepage {
+        padding-bottom: 60px;
+    }
+    
     .Homepage .main-content-container .welcome {
         width: 60%;
         padding: 0;
@@ -94,9 +135,17 @@
     .Homepage .main-content-container .main-games-card {
         margin-top: 32px;
     }
+
+    .Homepage .main-content-container .games-simple-cards {
+        margin-top: 60px;
+    }
 }
 
 @media (1024px <= width) {
+    .Homepage {
+        padding-bottom: 80px;
+    }
+
     .Homepage .main-content-container {
         max-width: 960px;
     }
@@ -128,6 +177,29 @@
     .Homepage .main-content-container .main-games-card {
         grid-template-columns: repeat(2, 1fr);
         margin-top: 56px;
+    }
+
+    .Homepage .main-content-container .games-simple-cards .title h4 {
+        font-size: var(--extra-extra-large)
+    }
+    
+    .Homepage .main-content-container .games-simple-cards .title .dots {
+        max-width: 65px;
+        margin-top: 5px;
+    }
+
+    .Homepage .main-content-container .games-simple-cards {
+        margin-top: 80px;
+    }
+
+    .games-simple-cards .cards .first-div {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto-fill, minmax(236px, 1fr));
+    }
+
+    .games-simple-cards .cards .second-div {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(150px, 186px));
     }
 }
 
@@ -162,5 +234,13 @@
 
     .Homepage .main-content-container .reviews .text {
         gap: 10px;
+    }
+
+    .games-simple-cards .cards .first-div {
+        grid-template-rows: repeat(auto-fill, minmax(297px, 1fr));
+    }
+
+    .games-simple-cards .cards .second-div {
+        grid-template-rows: repeat(auto-fit, minmax(150px, 221px));
     }
 }

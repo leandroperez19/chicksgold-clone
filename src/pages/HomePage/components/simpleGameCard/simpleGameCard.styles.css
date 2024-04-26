@@ -1,0 +1,22 @@
+.Simple-game-card {
+    position: relative;
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.Simple-game-card img {
+    position: absolute;
+    z-index: -1;
+}
+
+.Simple-game-card .title .cg-line {
+    width: 48px;
+}
+
+.Simple-game-card:hover {
+    transform: scale(1.02);
+}
+
+.Simple-game-card:hover .cg-line {
+    width: 60px;
+}

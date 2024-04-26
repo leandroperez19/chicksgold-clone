@@ -7,8 +7,10 @@ import DesktopBg from '../../assets/home-page-background.jpg';
 import Badge from '../../assets/award.svg';
 import Trustpilot from "../../components/Trustpilot/Trustpilot";
 import CategoryCard from "./components/categoryCard/categoryCard";
-import { categories, mainGames } from "./static";
+import { categories, mainGames, otherGames } from "./static";
 import GameCardFull from "./components/gameCardFull/gameCardFull";
+import SimpleGameCard from "./components/simpleGameCard/simpleGameCard";
+import SeoContent from "./components/seoContent/seoContent";
 
 type HomePageProps = {}
 
@@ -63,6 +65,14 @@ const HomePage: FC<HomePageProps> = () => {
               ))
             }
           </div>
+          <div className="games-simple-cards">
+            <div className="title d-flex fd-column align-center gap-10">
+              <h4>Games</h4>
+              <Dots />
+            </div>
+            <SimpleGameCards />
+          </div>
+          <SeoContent />
         </div>
       </div>
     </>
@@ -70,3 +80,40 @@ const HomePage: FC<HomePageProps> = () => {
 }
 
 export default HomePage;
+
+type DotsProps = {}
+
+const Dots: FC<DotsProps> = () => {
+  return(
+    <div className="dots d-flex align-center justify-between">
+      <div className="white-dot"/>
+      <div className="white-dot"/>
+      <div className="white-dot"/>
+    </div>
+  )
+}
+
+type SimpleGameCardsProps = {}
+
+const SimpleGameCards: FC<SimpleGameCardsProps> = () => {
+  const { isMobile } = useScreen(1024)
+
+  return(
+    <div className="cards d-grid gap-1rem">
+      <div className="first-div d-grid gap-1rem">
+        {
+          otherGames.slice(0, isMobile ? 4 : 3).map((game, i) => (
+            <SimpleGameCard key={i} img={game.img} title={game.title}/>
+          ))
+        }
+      </div>
+      <div className="second-div d-grid gap-1rem">
+        {
+          otherGames.slice(isMobile ? 4 : 3, otherGames.length + 1).map((game, i) => (
+            <SimpleGameCard key={i} img={game.img} title={game.title}/>
+          ))
+        }
+      </div>
+    </div>
+  )
+}

@@ -1,0 +1,97 @@
+.Seo-content {
+    margin-top: 40px;
+    max-width: 566px;
+    margin-inline: auto;
+}
+
+.Seo-content .promise .cards {
+    margin-top: 32px;
+    width: 75%;
+    margin-inline: auto;
+    gap: 24px;
+}
+
+.Seo-content .promise .cards .card {
+    gap: 24px;
+    font-size: var(--regular);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.Seo-content .promise .cards .card img {
+    height: 17px;
+    width: 19px;
+}
+
+.Seo-content .banner {
+    margin-block: 40px;
+}
+
+.Seo-content .banner img {
+    object-fit: contain;
+    max-height: 266px;
+}
+
+.Seo-content .about {
+    border-bottom: 1px solid var(--purple);
+    padding-bottom: 40px;
+}
+
+@media (768px <= width) {
+    .Seo-content .promise .cards {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 48px 0;
+        margin-top: 52px;
+    }
+    
+    .Seo-content .promise .cards .card img {
+        height: 24px;
+        width: 26px;
+    }
+
+    .Seo-content .banner {
+        margin-block: 60px;
+    }
+
+    .Seo-content .about {
+        padding-bottom: 60px;
+    }
+}
+
+@media (1024px <= width) {
+    .Seo-content {
+        max-width: unset;
+    }
+
+    .Seo-content .promise {
+        display: flex;
+        gap: 36px;
+        align-items: center;
+    }
+
+    .Seo-content .promise .text {
+        flex-basis: 95%;
+    }
+
+    .Seo-content .promise .cards {
+        grid-auto-rows: 30px;
+        margin: 0;
+    }
+
+    .Seo-content .promise .cards .card  {
+        font-size: var(--medium);
+    }
+
+    .Seo-content .banner {
+        margin-block: 80px;
+    }
+
+    .Seo-content .banner img {
+        max-height: 244px;
+    }
+    
+    .Seo-content .about {
+        padding-bottom: 80px;
+    }
+}
