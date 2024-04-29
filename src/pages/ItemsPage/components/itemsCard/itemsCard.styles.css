@@ -1,0 +1,247 @@
+.Items-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    min-height: 306px;
+    position: relative;
+}
+
+.Items-card .top {
+    height: 42px;
+    font-size: var(--tiny);
+}
+
+.Items-card .top .Mobile-input {
+    min-width: 80px;
+    font-size: var(--small);
+}
+
+.Items-card .top .Mobile-input button {
+    background-color: var(--purple);
+    width: 20px;
+    height: 20px;
+}
+
+.Items-card .top .on-sale:not(:empty)::before {
+    content: '';
+    border-radius: 50%;
+    background-color: var(--green);
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+}
+
+.Items-card .top .in-stock {
+    background-color: var(--green-transparent);
+    border-radius: 2px;
+    color: var(--green);
+    letter-spacing: .51px;
+    padding: 4px 11px;
+}
+
+.Items-card .image img {
+    max-width: 65px;
+    height: 50px;
+    object-fit: fill;
+    margin-top: 13px;
+}
+
+.Items-card .name {
+    margin-top: 19px;
+    font-size: var(--small);
+}
+
+.Items-card .name span {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    width: 80%;
+    max-height: 18px;
+}
+
+.Items-card .name img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid var(--green);
+    padding: 5px;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(78%) saturate(1407%) hue-rotate(75deg) brightness(90%) contrast(94%);
+}
+
+.Items-card .price {
+    /* margin-top: 10px; */
+    font-size: var(--regular);
+}
+
+.Items-card .price .main-price {
+    font-weight: 600;
+}
+
+.Items-card .price .previous-price {
+    font-weight: 300;
+    color: var(--brighter-gray);
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+.Items-card p.description {
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--brighter-gray);
+    font-size: var(--small);
+    opacity: .75;
+    line-height: 16px;
+    font-weight: 300;
+}
+
+.Items-card .buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+}
+
+.Items-card .buttons button {
+    flex-basis: 50%;
+    height: 40px;
+    font-size: var(--regular);
+    font-weight: 700;
+    color: var(--brighter-gray);
+    letter-spacing: .15px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.Items-card .buttons button:first-of-type {
+    background-color: var(--btn-color);
+}
+
+.Items-card .buttons button:first-of-type:hover {
+    background-color: var(--dropdown-bg-hover);
+}
+
+.Items-card .buttons button:last-of-type {
+    background-color: var(--purple);
+    justify-content: space-between;
+    padding-inline: 15px 8px;
+    box-shadow: 0px 0px 4px var(--dark-bg);
+}
+
+.Items-card .buttons button:last-of-type:hover {
+    background-color: var(--purple-hover);
+}
+
+.Items-card .buttons button:last-of-type span {
+    background: var(--dark-purple);
+    border-radius: 4px;
+    padding: 7px 15px;
+}
+
+@media (580px <= width) {
+    .Items-card {
+        min-height: 293px;
+        padding: 10px 20px 20px;
+    }
+
+    .Items-card .buttons button:last-of-type span {
+        padding: 7px 10px;
+    }
+
+    .Items-card .buttons button:last-of-type {
+        padding-inline: 10px 8px;
+    }
+}
+
+@media (1024px <= width) {
+    .Items-card {
+        padding: 15px 10px;
+    }
+
+    .Items-card .name {
+        font-size: var(--regular);
+    }
+
+    .Items-card .buttons {
+        bottom: 15px;
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .Items-card .buttons button:last-of-type {
+        padding-inline: 25px 8px;
+    }
+
+    .Items-card .buttons button:last-of-type span {
+        padding-inline: 15px;
+    }
+}
+
+@media (1200px <= width) {
+    .Items-card .buttons button:last-of-type {
+        padding-inline: 15px 8px;
+    }
+
+    .Items-card .buttons button:last-of-type span {
+        padding-inline: 10px;
+    }
+}
+
+.Desktop-input {
+    background-color: var(--very-transparent-bg);
+    height: 40px;
+    min-width: 60px;
+    border-radius: 4px;
+    position: relative;
+    transition: background-color .3s ease;
+}
+
+.Desktop-input:hover {
+    background-color: var(--brighten-transparent-bg);
+}
+
+.Desktop-input input {
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 5px 14px 5px 8px;
+    color: var(--white);
+}
+
+.Desktop-input .arrows {
+    position: absolute;
+    right: 8px;
+    z-index: 5;
+    top: 5px;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.Desktop-input .arrows span {
+    margin-bottom: -7px;
+    font-size: var(--large);
+    cursor: pointer;
+    transition: color .3s ease;
+    user-select: none;
+}
+
+.Desktop-input .arrows span:hover {
+    color: var(--green);
+}
+
+.Desktop-input input:focus + .arrows, .Desktop-input:hover .arrows {
+    opacity: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

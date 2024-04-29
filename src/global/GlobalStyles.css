@@ -17,9 +17,12 @@ ul {
 :root{
     --green: #39e29d;
     --green-hover: #39e29d33;
+    --green-transparent: #39e29d0d;
     --purple: #5762d5;
     --purple-hover: #4a53b5;
+    --dark-purple: #454da8;
     --white: #ffffff;
+    --black: #000000
     --bright-gray: #fafcff;
     --brighter-gray: #ffffffbf;
     --light-white: #ffffff8c;
@@ -33,7 +36,12 @@ ul {
     --solid-bg: #4c6085;
     --sidebar-bg: #2d3344;
     --expandable-bg: #2b2c3c;
+    --card-bg: #4c608526;
     --li-color: #fafcffb3;
+    --dropdown-bg: #465778;
+    --dropdown-bg-hover: #465678;
+    --box-shadow-color: #2c2d33cc;
+    --btn-color: #3f4254;
     --tiny: 10px;
     --small: 12px;
     --regular: 14px;
@@ -42,6 +50,7 @@ ul {
     --extra-large: 20px;
     --extra-extra-large: 24px;
     --tablet-main-title: 30px;
+    --tablet-extra-title: 40px;
     --desktop-main-title: 65px;
 }
 

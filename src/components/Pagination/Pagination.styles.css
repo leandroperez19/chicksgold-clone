@@ -1,0 +1,74 @@
+.Pagination {
+    width: 100%;
+    max-width: 350px;
+    margin-inline: auto;
+}
+
+.Pagination span {
+    border: 1px solid var(--purple);
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    transition: background-color .3s ease;
+    cursor: pointer;
+    margin-inline: 5px;
+}
+
+.Pagination span:hover {
+    background-color: var(--purple);
+}
+
+.Pagination ul li, .Pagination ul input {
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--white);
+    border: none;
+    text-align: center;
+    transition: background-color .3s ease;
+}
+
+.Pagination ul li {
+    cursor: pointer;
+}
+
+.Pagination ul li:hover {
+    background-color: var(--semi-transparent-bg);
+}
+
+.Pagination ul li.active {
+    background-color: var(--purple);
+}
+
+.Pagination ul input::placeholder {
+    text-align: center;
+    font-size: var(--regular);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.Pagination ul input:focus, 
+.Pagination ul input:hover {
+    background-color: var(--brighten-transparent-bg);
+    border: none;
+    outline: none;
+}
+
+@media (1024px <= width) {
+    .Pagination ul li, .Pagination ul input, .Pagination span {
+        width: 40px;
+        height: 40px; 
+    }
+
+    .Pagination ul li, .Pagination ul input {
+        font-size: var(--medium);
+    }
+
+    .Pagination ul {
+        gap: 15px;
+    }
+}

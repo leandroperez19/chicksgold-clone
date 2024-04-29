@@ -1,0 +1,84 @@
+.Simple-dropdown {
+    position: relative;
+}
+
+.Simple-dropdown .option-selected {
+    min-height: 50px;
+    width: 100%;
+    background-color: var(--very-transparent-bg);
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.Simple-dropdown .option-selected:hover {
+    background-color: var(--semi-transparent-bg);
+}
+
+.Simple-dropdown.disabled, .Simple-dropdown.disabled .option-selected {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.Simple-dropdown .option-selected .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.Simple-dropdown .option-selected .text .label {
+    color: var(--light-white);
+}
+
+.Simple-dropdown .Options {
+    position: absolute;
+    width: 100%;
+    top: 101%;
+    left: 0;
+    background-color: var(--nav-bg);
+    z-index: 20;
+    box-shadow: 0px 0px 4px var(--dark-bg);
+    overflow-y: scroll;
+    max-height: 0;
+    animation: options-expand .3s forwards;
+}
+
+.Simple-dropdown .Options.inactive {
+    animation: options-shrink .3s forwards;
+}
+
+@keyframes options-expand {
+    100% {
+        max-height: 220px;
+    }
+}
+
+@keyframes options-shrink {
+    0% {
+        max-height: 220px;
+    }
+    100% {
+        max-height: 0;
+    }
+}
+
+.Simple-dropdown .Options .option {
+    padding: 15px 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.Simple-dropdown .Options .option:not(:last-of-type)::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: var(--light-white);
+    content: '';
+    border-radius: 4px;
+}
+
+.Simple-dropdown .Options .option:hover {
+    background-color: var(--dropdown-bg-hover);
+}

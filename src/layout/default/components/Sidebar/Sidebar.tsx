@@ -2,15 +2,16 @@ import { FC, useEffect, useState } from "react";
 import "./Sidebar.styles.css";
 import Searchbar from "../../../../components/Searchbar/Searchbar";
 import { Category, Game } from "../../../../services/categoryService.types";
+import { useAppContext } from "../../../../context/app.context";
 
 type SidebarProps = {
     setState: () => void,
     reference:  React.MutableRefObject<HTMLDivElement | null>,
-    categories: Category[] | null
 };
 
-const Sidebar: FC<SidebarProps> = ({ setState, reference, categories }) => {
+const Sidebar: FC<SidebarProps> = ({ setState, reference }) => {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const { categories } = useAppContext()
 
     const handleDropdownToggle = (label: string) => {
         if (label === activeDropdown) setActiveDropdown(null);

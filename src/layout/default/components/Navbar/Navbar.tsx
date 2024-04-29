@@ -4,13 +4,14 @@ import "./Navbar.styles.css";
 import { useScreen } from "../../../../hooks/useScreen";
 import { Category, Game } from "../../../../services/categoryService.types";
 import Searchbar from "../../../../components/Searchbar/Searchbar";
+import { useAppContext } from "../../../../context/app.context";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type NavbarProps = {
     sidebarToggle: () => void;
-    categories: Category[] | null;
 };
 
-const Navbar: FC<NavbarProps> = ({ sidebarToggle, categories }) => {
+const Navbar: FC<NavbarProps> = ({ sidebarToggle }) => {
     const { isMobile } = useScreen(1024);
     const ref = useRef<HTMLElement | null>(null)
 
@@ -20,7 +21,7 @@ const Navbar: FC<NavbarProps> = ({ sidebarToggle, categories }) => {
                 {isMobile ? (
                     <MobileContent sidebarToggle={sidebarToggle} />
                 ) : (
-                    <DesktopContent categories={categories} reference={ref}/>
+                    <DesktopContent reference={ref}/>
                 )}
             </div>
         </nav>
@@ -54,17 +55,18 @@ const MobileContent: FC<MobileContentProps> = ({ sidebarToggle }) => {
 };
 
 type DesktopContentProps = {
-    categories: Category[] | null;
     reference: React.MutableRefObject<HTMLElement | null>
 };
 
-const DesktopContent: FC<DesktopContentProps> = ({ categories, reference }) => {
+const DesktopContent: FC<DesktopContentProps> = ({ reference }) => {
+    const { categories } = useAppContext();
+
     return (
         <>
             <div className="left flex-center h-100">
-                <div className="logo">
+                <a className="logo" href="/">
                     <img src={logo} alt="logo" />
-                </div>
+                </a>
                 <div className="categories d-flex h-100">
                     {categories?.map((cat, i: number) => (
                         <CategoryNav category={cat} key={i} reference={reference}/>
@@ -93,6 +95,8 @@ type CategoryNavProps = {
 };
 
 const CategoryNav: FC<CategoryNavProps> = ({ category, reference }) => {
+    const location = useLocation();
+
     const ref = useRef<HTMLDivElement>(null);
     const hoverIn = () => {
         categoryHoverIn()
@@ -105,11 +109,12 @@ const CategoryNav: FC<CategoryNavProps> = ({ category, reference }) => {
 
     const categoryHoverIn = () => reference.current?.classList.remove('navbar-transparent');
     const categoryHoverOut = () => {
-        if(window.scrollY >= 30) return
+        if(window.scrollY >= 30 || location.pathname !== '/') return
         reference.current?.classList.add('navbar-transparent')
     };
-
     
+    const navigate = useNavigate();
+
     const trendingGames = category.games.filter((game) => game.isTrending)
     const regularGames = category.games.filter((game) => !game.isTrending)
 
@@ -129,7 +134,12 @@ const CategoryNav: FC<CategoryNavProps> = ({ category, reference }) => {
 
     return (
         <div className="category-nav h-100">
-            <div className="hover-item flex-center h-100 white gap-5" ref={ref} onMouseOver={categoryHoverIn} onMouseOut={categoryHoverOut}>
+            <div
+            onClick={() => navigate(`/${category.name.toLowerCase()}`)} 
+            className="hover-item flex-center h-100 white gap-5" 
+            ref={ref} 
+            onMouseOver={categoryHoverIn} 
+            onMouseOut={categoryHoverOut}>
                 {category.name.toUpperCase()}
                 <span className="material-symbols-outlined white arrow-down">
                     expand_more

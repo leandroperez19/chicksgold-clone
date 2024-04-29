@@ -1,0 +1,177 @@
+.Items-page {
+    position: relative;
+    min-height: 70vh;
+}
+
+.Items-page img.background {
+    width: 100%;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    user-select: none;
+    z-index: -1;
+}
+
+.Items-page .page-content {
+    padding: 107px 20px 40px;
+    width: 100%;
+}
+
+.Items-page .page-content h1 {
+    font-size: var(--extra-extra-large);
+    letter-spacing: 1.28px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.Items-page .page-content .filters {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+}
+
+.Items-page .page-content .filters .first-row {
+    gap: 8px;
+}
+
+.Items-page .page-content .filters .first-row .Games-dropdown {
+    flex-basis: 76%;
+}
+
+.Items-page .page-content .filters .first-row button {
+    height: 50px;
+    background-color: var(--purple);
+    border-radius: 5px;
+    flex-basis: 24%;
+    color: var(--light-white);
+}
+
+.Items-page .page-content .filters .second-row .Simple-dropdown {
+    flex-basis: 50%;
+}
+
+.Items-page .page-content .filters .second-row .Simple-dropdown:first-of-type .option-selected {
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid var(--purple);
+}
+
+.Items-page .page-content .filters .second-row .Simple-dropdown:last-of-type .option-selected {
+    border-radius: 0 5px 5px 0;
+}
+
+.Items-page .page-content .cards-container {
+    background: var(--nav-bg);
+    box-shadow: 0 0 20px var(--box-shadow-color);
+    min-height: 600px;
+    margin-top: 25px;
+    padding: 33px;
+}
+
+.Items-page .page-content .cards-container .drop {
+    flex-basis: 100%;
+}
+
+.Items-page .page-content .cards-container .cards {
+    margin-top: 20px;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+}
+
+.Items-page .page-content .cards-container .pagination-container {
+    margin-block: 40px 16px;
+}
+
+@media (580px <= width) {
+    .Items-page .page-content {
+        padding: 114px 32px 60px;
+        width: 100%;
+        max-width: 580px;
+        margin-inline: auto;
+    }
+
+    .Items-page .page-content .filters {
+        display: grid;
+        gap: 15px;
+    }
+
+    .Items-page .page-content .filters .first-row .Games-dropdown {
+        flex-basis: 100%;
+    }
+
+    .Items-page .page-content .filters .Searchbar {
+        height: 50px;
+    }
+
+    .Items-page .page-content .cards-container {
+        padding: 20px;
+    }
+
+    .Items-page .page-content .cards-container .cards {
+        gap: 20px;
+    }
+
+    .Items-page .page-content .cards-container .top span.items-shown {
+        color: var(--brighter-gray);
+        font-size: var(--regular);
+    }
+
+    .Items-page .page-content .cards-container .drop { 
+        flex-basis: 35%;
+        max-width: 200px;
+    }
+
+    .Items-page .page-content .cards-container .pagination-container {
+        margin-block: 70px 16px;
+    }    
+}
+
+@media (1024px <= width) {
+    .Items-page .page-content {
+        padding: 143px 20px 80px;
+        max-width: 960px;
+    }
+
+    .Items-page .page-content h1 {
+        font-size: var(--tablet-extra-title);
+    }
+
+    .Items-page .page-content .filters {
+        grid-template-columns: 20% 41.5% 35%;
+    }
+
+    .Items-page .page-content .filters .label, .Items-page .page-content .filters .placeholder {
+        font-size: var(--regular) !important;
+        font-weight: 300 !important;
+    }
+
+    .Items-page .page-content .cards-container {
+        padding: 50px 50px 24px;
+    }
+
+    .Items-page .page-content .cards-container .pagination-container {
+        margin-block: 40px 16px;
+    }    
+}
+
+@media (1200px <= width) {
+    .Items-page .page-content {
+        padding: 185px 0 80px;
+        max-width: 1260px;
+        width: 94.7%;
+        margin-inline: auto;
+    }
+
+    .Items-page .page-content .filters {
+        grid-template-columns: 23% 48.5% 25%;
+        gap: 20px;
+    }
+
+    .Items-page .page-content .cards-container {
+        margin-top: 20px;
+    }
+
+    .Items-page .page-content .cards-container .cards {
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 20px;
+    }
+}
