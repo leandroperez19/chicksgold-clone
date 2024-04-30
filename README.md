@@ -6,9 +6,11 @@ This is a design challenge so it may lack a bit of logic, I still did my best to
 
 It was build with react and pure css, you can find the components and their respective styles in two folders, src/components for all page components and a /components folder inside each page for page-only components.
 
-I used GraphQl for request, services and their types are on the /service folder 
+I used GraphQl for request, services and their types are on the /services folder.
 
-The useScreen hook works by passing a resolution (in number) so you can render things just in the resolution of your wish.
+I also used typescript this time, most of thing should have their correspondent type/.
+
+The useScreen hook works by passing a resolution so you can render things just in the resolution of your wish.
 
 You also have some utils for formatting text and currency.
 
