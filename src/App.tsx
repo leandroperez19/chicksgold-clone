@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         ),
     },
     {
-        path: "/items/",
+        path: "/items",
         element: (
             <DefaultLayout>
                 <ItemsPage />
