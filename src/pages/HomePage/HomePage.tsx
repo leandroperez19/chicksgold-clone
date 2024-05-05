@@ -29,7 +29,10 @@ const HomePage: FC<HomePageProps> = () => {
     document.querySelector('nav')?.classList.add('navbar-transparent')
     document.addEventListener('scroll', scrollHandler)
 
-    return () => document.removeEventListener('scroll', scrollHandler)
+    return () => {
+      document.removeEventListener('scroll', scrollHandler)
+      document.querySelector('nav')?.classList.remove('navbar-transparent')
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
